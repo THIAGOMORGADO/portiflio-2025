@@ -1,50 +1,29 @@
-# React + TypeScript + Vite
+# Meu Portfólio de Desenvolvedor Fullstack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao repositório do meu portfólio! Aqui, você encontra os projetos que desenvolvi como um desenvolvedor fullstack, demonstrando minhas habilidades técnicas e criativas.
 
-Currently, two official plugins are available:
+## Sobre Mim
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Sou um desenvolvedor fullstack apaixonado por criar soluções eficientes e inovadoras. Com experiência em **HTML**, **CSS**, **JavaScript**, **Node.js**, **React**, e outras tecnologias, busco sempre aprimorar minhas competências e explorar novas ferramentas no universo do desenvolvimento.
 
-## Expanding the ESLint configuration
+## Projetos Destacados
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 1. [Agendei](https://github.com/usuario/agendei)
 
-- Configure the top-level `parserOptions` property like this:
+Aplicativo de agendamento de consultas médicas que permite aos usuários:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Marcar consultas com facilidade.
+- Gerenciar horários.
+- Receber lembretes automáticos.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+**Tecnologias Utilizadas:** React, Node.js, SQLITE, Express.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Contato
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Se quiser saber mais sobre meu trabalho ou colaborar em algum projeto, entre em contato comigo:
+
+- **E-mail:** meuemail@exemplo.com
+- **LinkedIn:** [Meu Perfil](https://linkedin.com/in/meuperfil)
+- **Portfólio Online:** [meusite.com](https://meusite.com)
+
+Agradeço por visitar meu repositório. Fique à vontade para explorar os projetos e deixar feedbacks!
