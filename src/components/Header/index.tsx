@@ -61,14 +61,14 @@ export default function Header() {
         aria-modal="true"
       >
         <div
-          className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-all duration-300"
           onClick={() => setMobileMenuOpen(false)}
         ></div>
-        <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm border-l border-gray-800">
-          <div className="flex items-center justify-between">
+        <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#0A0F1C] px-6 py-6 sm:max-w-sm border-l border-blue-500/10 shadow-2xl">
+          <div className="flex items-center justify-between mb-8">
             <a
               href="/"
-              className="-m-1.5 p-1.5"
+              className="-m-1.5 p-1.5 transition-all duration-300"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Thiago Morgado Dev</span>
@@ -78,21 +78,21 @@ export default function Header() {
             </a>
             <Button
               variant="ghost"
-              className="-m-2.5 rounded-md p-2.5 text-gray-300 hover:text-gray-100"
+              className="-m-2.5 rounded-full p-2.5 text-gray-300 hover:text-gray-100 hover:bg-gray-800/50"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
               <X className="h-6 w-6" aria-hidden="true" />
             </Button>
           </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-800">
-              <div className="space-y-2 py-6">
+          <div className="mt-2 flow-root">
+            <div className="-my-6">
+              <div className="space-y-3 py-6">
                 {navItems.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 transition-all duration-300"
+                    className="flex items-center gap-2 rounded-xl px-4 py-3 text-base font-semibold text-gray-300 hover:text-white hover:bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-transparent hover:border-blue-500/20 transition-all duration-300 hover:scale-[1.02]"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
