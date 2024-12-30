@@ -2,27 +2,18 @@ import Badgers from "./components/Badge";
 import { Buttons } from "./components/Button";
 import Header from "./components/Header";
 import { useState } from "react";
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 import FileIcon from "@/assets/file.svg";
 import LInkedin from "@/assets/linkedin.svg";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDYzFy3ZlI3YrHLVIcC-lSeuKRWsfrCCpE",
-  authDomain: "portifolio-17f1f.firebaseapp.com",
-  projectId: "portifolio-17f1f",
-  storageBucket: "portifolio-17f1f.firebasestorage.app",
-  messagingSenderId: "207593034361",
-  appId: "1:207593034361:web:d0d1208ba45ad5ac2afaa8",
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+import { db } from "./services/firebase";
+import { addDoc, collection } from "firebase/firestore";
+import { ProjectPortfolio } from "./components/Project";
+// Removed ProjectList import as it caused an error
 
 function App() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -149,10 +140,13 @@ function App() {
             Meus Projetos
           </h2>
 
-          {/* Criar o app para subir no firebase os projeto 
+          <ProjectPortfolio title="backend" />
 
-          <ProjectList />
-*/}
+          <ProjectPortfolio title="Front End" />
+
+          <ProjectPortfolio title="Mobile" />
+
+          <ProjectPortfolio title="Saas" />
         </section>
 
         <section className="container mx-auto px-6 py-12 md:px-12 lg:px-20 lg:py-16 shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300 justify-center">
