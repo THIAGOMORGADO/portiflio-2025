@@ -35,13 +35,13 @@ type ProjectProps = {
 
 export function ProjectPortfolio({ title }: ProjectProps) {
   return (
-    <div className="container mx-auto px-4 py-4">
+    <div className="container mx-auto py-4">
       <h2 className="text-3xl font-bold text-white mb-6">{title}</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-4 ">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-gray-800 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl"
+            className="bg-gray-800 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl w-full sm:w-auto" // Set width to full on mobile
           >
             <img
               src={project.image}
@@ -52,12 +52,12 @@ export function ProjectPortfolio({ title }: ProjectProps) {
               {project.title}
             </h3>
             <p className="text-gray-300 mb-4">{project.description}</p>
-            <div className="flex justify-between">
+            <div className="flex flex-col sm:flex-row justify-between sm:justify-center sm:gap-5 gap-2">
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-blue-600 text-white rounded-full px-4 py-2 hover:bg-blue-700 transition"
+                className="inline-block bg-blue-600 text-white rounded-full px-4 py-2 hover:bg-blue-700 transition text-center"
               >
                 Ver Projeto
               </a>
@@ -65,7 +65,7 @@ export function ProjectPortfolio({ title }: ProjectProps) {
                 href={`${project.link}/demo`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-green-600 text-white rounded-full px-4 py-2 hover:bg-green-700 transition"
+                className="inline-block bg-green-600 text-white rounded-full px-4 py-2 hover:bg-green-700 transition text-center"
               >
                 Ver Demo
               </a>

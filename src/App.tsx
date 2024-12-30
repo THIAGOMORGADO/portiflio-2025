@@ -114,7 +114,7 @@ function App() {
           </div>
         </main>
 
-        <section className="container mx-auto px-20 py-16">
+        <section className="container mx-auto sm:px-20  py-16">
           <h2 className="text-3xl font-bold text-center text-gray-200 mb-12">
             Meus Projetos
           </h2>
