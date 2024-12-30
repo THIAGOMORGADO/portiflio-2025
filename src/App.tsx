@@ -9,7 +9,6 @@ import LInkedin from "@/assets/linkedin.svg";
 import { db } from "./services/firebase";
 import { addDoc, collection } from "firebase/firestore";
 import { ProjectPortfolio } from "./components/Project";
-// Removed ProjectList import as it caused an error
 
 function App() {
   const [name, setName] = useState<string>("");
@@ -28,7 +27,6 @@ function App() {
       setEmail("");
       setMessage("");
       alert("Mensagem enviada com sucesso!");
-      console.log("Aqui");
     } catch (error) {
       console.error("Erro ao enviar mensagem: ", error);
       alert("Erro ao enviar mensagem.");
@@ -56,46 +54,27 @@ function App() {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Badgers
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                  title="React"
-                  className="bg-gray-800/40 text-white px-4 py-3 rounded-xl border-2 border-blue-500/40 hover:border-blue-500 shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 font-medium text-base cursor-pointer"
-                />
-                <Badgers
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                  title="React Native"
-                  className="bg-gray-800/40 text-white px-4 py-3 rounded-xl border-2 border-blue-400/40 hover:border-blue-400 shadow-lg hover:shadow-blue-400/30 hover:-translate-y-1 transition-all duration-300 font-medium text-base cursor-pointer"
-                />
-                <Badgers
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                  title="Node.js"
-                  className="bg-gray-800/40 text-white px-4 py-3 rounded-xl border-2 border-green-500/40 hover:border-green-500 shadow-lg hover:shadow-green-500/30 hover:-translate-y-1 transition-all duration-300 font-medium text-base cursor-pointer"
-                />
-                <Badgers
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                  title="HTML"
-                  className="bg-gray-800/40 text-white px-4 py-3 rounded-xl border-2 border-orange-500/40 hover:border-orange-500 shadow-lg hover:shadow-orange-500/30 hover:-translate-y-1 transition-all duration-300 font-medium text-base cursor-pointer"
-                />
-                <Badgers
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                  title="CSS"
-                  className="bg-gray-800/40 text-white px-4 py-3 rounded-xl border-2 border-blue-600/40 hover:border-blue-600 shadow-lg hover:shadow-blue-600/30 hover:-translate-y-1 transition-all duration-300 font-medium text-base cursor-pointer"
-                />
-                <Badgers
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                  title="JavaScript"
-                  className="bg-gray-800/40 text-white px-4 py-3 rounded-xl border-2 border-yellow-500/40 hover:border-yellow-500 shadow-lg hover:shadow-yellow-500/30 hover:-translate-y-1 transition-all duration-300 font-medium text-base cursor-pointer"
-                />
-                <Badgers
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                  title="TypeScript"
-                  className="bg-gray-800/40 text-white px-4 py-3 rounded-xl border-2 border-blue-700/40 hover:border-blue-700 shadow-lg hover:shadow-blue-700/30 hover:-translate-y-1 transition-all duration-300 font-medium text-base cursor-pointer"
-                />
-                <Badgers
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                  title="NextJs"
-                  className="bg-gray-800/40 text-white px-4 py-3 rounded-xl border-2 border-white/40 hover:border-white shadow-lg hover:shadow-white/30 hover:-translate-y-1 transition-all duration-300 font-medium text-base cursor-pointer"
-                />
+                {[
+                  "React",
+                  "React Native",
+                  "Node.js",
+                  "HTML",
+                  "CSS",
+                  "JavaScript",
+                  "TypeScript",
+                  "NextJs",
+                ].map((tech, index) => (
+                  <Badgers
+                    key={index}
+                    src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech
+                      .toLowerCase()
+                      .replace(".", "")}/${tech
+                      .toLowerCase()
+                      .replace(".", "")}-original.svg`}
+                    title={tech}
+                    className="bg-gray-800/40 text-white px-4 py-3 rounded-xl border-2 border-blue-500/40 hover:border-blue-500 shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 font-medium text-base cursor-pointer"
+                  />
+                ))}
               </div>
 
               <div className="flex flex-col sm:flex-row gap-8 mt-12 justify-center items-center">
@@ -141,15 +120,12 @@ function App() {
           </h2>
 
           <ProjectPortfolio title="backend" />
-
           <ProjectPortfolio title="Front End" />
-
           <ProjectPortfolio title="Mobile" />
-
           <ProjectPortfolio title="Saas" />
         </section>
 
-        <section className="container mx-auto px-6 py-12 md:px-12 lg:px-20 lg:py-16 shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300 justify-center">
+        <section className="container mx-auto px-6 py-4 md:px-12 lg:px-20 lg:py-16 shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300 justify-center">
           <h2 className="text-4xl font-bold text-center text-gray-200 mb-8 lg:mb-12 mt-6">
             Sobre mim
           </h2>
@@ -188,20 +164,20 @@ function App() {
                 placeholder="Nome"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full max-w-md p-2 rounded-md border border-gray-300 bg-white text-gray-900"
+                className="w-full max-w-md p-2 rounded-md border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
               />
               <input
                 type="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full max-w-md p-2 rounded-md border border-gray-300 bg-white text-gray-900"
+                className="w-full max-w-md p-2 rounded-md border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
               />
               <textarea
                 placeholder="Mensagem"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full max-w-md p-2 rounded-md border border-gray-300 bg-white text-gray-900"
+                className="w-full max-w-md p-2 rounded-md border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
               />
               <button className="w-full max-w-md p-2 rounded-md bg-blue-500 text-white font-bold hover:bg-blue-600 transition duration-300">
                 Enviar
