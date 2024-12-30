@@ -22,8 +22,8 @@ Aplicativo de agendamento de consultas médicas que permite aos usuários:
 
 Se quiser saber mais sobre meu trabalho ou colaborar em algum projeto, entre em contato comigo:
 
-- **E-mail:**thiago.n.morgado@gmail.com
-- **LinkedIn:** [Meu Perfil](https://linkedin.com/inthiago-morgado-75814424b/)
+- **E-mail:** [thiago.n.morgado@gmail.com](mailto:thiago.n.morgado@gmail.com)
+- **LinkedIn:** [Meu Perfil](https://linkedin.com/in/thiago-morgado-75814424b/)
 - **Portfólio Online:** [meusite.com](https://thiagomorgadodev.dev)
 
 Agradeço por visitar meu repositório. Fique à vontade para explorar os projetos e deixar feedbacks!
